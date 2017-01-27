@@ -1,0 +1,202 @@
+/* Light Green: #63a541; */
+/* Dark Green:  #49953f; */
+
+#custom-logo { margin-top:10px !important; }
+#custom-logo-link { 
+	height:63px; 
+	display:block;
+}
+
+#custom-main-container { 
+	min-height: 300px;
+	text-align: center;
+}
+
+#loan-list li.custom-loan-row { 
+	text-align: left;
+	overflow: hidden;
+	list-style: none;
+	list-style-type: none;
+
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+14,63a541+84,63a541+94,49953f+100 */
+	background: #ffffff; /* Old browsers */
+	background: -moz-linear-gradient(top,  #ffffff 0%, #ffffff 14%, #63a541 84%, #63a541 94%, #49953f 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  #ffffff 0%,#ffffff 14%,#63a541 84%,#63a541 94%,#49953f 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  #ffffff 0%,#ffffff 14%,#63a541 84%,#63a541 94%,#49953f 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#49953f',GradientType=0 ); /* IE6-9 */
+
+
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+
+	border-top: 1px solid #444;
+	border-left: 2px solid #49953f;
+	border-right: 2px solid #49953f;
+	border-bottom: 4px solid #49953f;
+
+	width:100%;
+	min-height:150px;
+	position: relative;
+}
+
+.custom-headshot { 
+	width: 150px;
+	height:140px;
+	background-color: #888;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	border: 3px solid #888;
+	overflow: hidden;
+	float:left;
+	position: relative;
+	margin:4px;
+	cursor:pointer;
+}
+.custom-ammount {
+    position: absolute;
+    bottom: -3px;
+    right: 4px;
+    color: #fff;
+    text-shadow: 2px 2px #444;
+    font-weight:bold;
+    font-size:120%;
+}
+.custom-disbursal-date {
+    position: absolute;
+    color: #fff;
+    text-shadow: 2px 2px #444;
+	font-size:80%;
+	left:6px;
+	bottom:0;
+}
+.custom-name, .custom-lender-name { 
+	font-size:140%;
+	font-weight:bold;
+}
+.custom-lender-count, .custom-town-inline, .custom-country-inline {font-size: 70%;}
+.custom-town-inline, .custom-country-inline { font-weight: normal; }
+.custom-lender-list-container {
+	height:210px;
+	overflow-y:auto;
+}
+.custom-lender-container {
+	float:right;
+	display:none;
+	width:20%;
+	/*overflow-y:scroll;*/
+}
+.custom-lender-list, .custom-lender-list li { 
+	list-style: none;
+	list-style-type: none;
+	margin:0;
+	padding:0;
+}
+.custom-lender-list li { 
+	display: inline-block;
+	float:left;
+	margin: 4px 4px 0 0;
+}
+.custom-lender-image-container { 
+
+	-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;
+	border-radius: 30px;
+
+	width:60px;
+	height:60px;
+	overflow: hidden;
+	background-color: #fff;
+}
+.custom-summary-info { 
+	float:left;
+	width:70%;
+	min-height:140px;
+	max-height:300px;
+}
+.custom-town-inline { display: none; }
+.custom-description { 
+	display:none;
+	font-size:75%;
+    height: 170px;
+    overflow-y: auto;
+}
+.custom-payment-schedule { 
+	display:none;
+	position: absolute;
+	bottom:0;
+	
+	width:69%;
+    color: #fff;
+    text-shadow: 2px 2px #444;
+}
+.payment-schedule-container { 
+	border: 1px solid black;
+
+	border-right:1px solid black;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+
+	width:100%;
+
+		/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,ffffff+100&0.65+0,0.65+100 */
+	background: -moz-linear-gradient(left,  rgba(0,0,0,0.65) 0%, rgba(255,255,255,0.65) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(left,  rgba(0,0,0,0.65) 0%,rgba(255,255,255,0.65) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to right,  rgba(0,0,0,0.65) 0%,rgba(255,255,255,0.65) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#a6ffffff',GradientType=1 ); /* IE6-9 */
+
+}
+ul.payment-schedule-list, ul.payment-schedule-list li {
+	list-style-type: none;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	height:40px;
+
+
+
+}
+ul.payment-schedule-list li {
+	display: inline-block;
+
+	border-right:1px solid black;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+
+	font-size:12px;
+	line-height: 40px;
+	text-align: center;
+	overflow: hidden;
+	cursor: pointer;
+	position: relative;
+	padding-right:10px;
+}
+ul.payment-schedule-list li:last-child {
+	border: 0 !important;
+}
+.ps-detail-view { 
+	display:none; 
+	width:100%;
+	position: relative;
+}
+.total-paid { font-size: 90%; }
+.psdv-top-left, .psdv-bottom-left {
+	position: absolute;
+	left:10px;
+}
+.psdv-top-left {
+	top:-10px;
+}
+.psdv-bottom-left {
+	bottom: -10px;
+}
+
+.psdv-detail {
+	width:100%;
+	text-align: right;
+}
+
+#load-more { margin:10px auto; display: none; }
