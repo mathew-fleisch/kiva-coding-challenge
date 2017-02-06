@@ -27,3 +27,37 @@ This challenge was given to me by [kiva.org](http://kiva.org) while interviewing
 I had a lot of fun with this project and spent a couple of days working on it. However, I got a little carried away with creating the interface and didn't leave enough time to create the unit tests. I had a little trouble working out the math when rounding errors popped up (Superman 3/Office Space), but tried my best to compensate, when that happened. If I had more time on the project, I would first complete the unit tests, and then start optimizing the display (don't reload a detail-view, if it is already hidden on the page). Finally I would take the prototype that I have created here, and implement it with a more standard MVC architecture. I would create a local api library to standardize the requests to the public api so that all requests went through the back-end, and not on the client side, directly to the browser. That way, additional processing (sql audit trail and condensing multiple public api requests into one response from the local server) could be done faster, and with less back-and-forth from the client to the server. 
 
 #### [Live Demo](http://mathewfleisch.com/kiva/)
+
+
+### More on rounding
+I introduced a concept in my code called the "rounding difference" which is how I tried to compensate for rounding errors that occur. Consider the following example:
+
+* $325 Loan
+* Between 5 lenders
+* Paid back over 8 months
+
+The total payment back to each lender, should be $65
+```
+$325 / 5 lenders = $65
+```
+That amount divided over 8 months (rounded) should be $8.13
+```
+$65 / 8 months = $8.13
+```
+
+However, if that exact amount is paid back to each lender, over 8 months, the total paid back would be $325.20 because of previous rounding. To get the total amount paid back, closer to the original loan amount, my algorithm reduces the payback amount by 1 cent for all lenders after a certain point, which is determined by what I called, the “rounding difference” and it goes something like this:
+```
+Rounding_diff = 100 * { ([(loan_total / num_lenders) / num_months] * num_months) – (loan_total / num_lenders) } 
+or in this case
+rounding_diff = 100 * (({($325 / 5 lenders) / 8 months} * 8 months) - ($325 / 5 lenders)) = 4
+rounding_diff = 100 * (({$65 / 8 months} * 8 months) - $65) = 4
+rounding_diff = 100 * (($8.13 * 8 months) - $65) = 4
+rounding_diff = 100 * ($0.04) = 4
+```
+The rounding difference is finally used to determine what month to subtract one cent from every lender's bill. In this case, the first 4 months will be at $8.13 and $8.12 for the remaining 4 months.
+```
+Total Paid Back = ( ($8.13 * 5 lenders) * 4 months) + ( ($8.12 * 5 lenders) * 4 months)
+Total Paid Back = $162.60 + $162.40
+Total Paid Back = $375
+```
+ 
