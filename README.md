@@ -47,12 +47,15 @@ $65 / 8 months = $8.13
 
 However, if that exact amount is paid back to each lender, over 8 months, the total paid back would be $325.20 because of previous rounding. To get the total amount paid back, closer to the original loan amount, my algorithm reduces the payback amount by 1 cent for all lenders after a certain point, which is determined by what I called, the “rounding difference” and it goes something like this:
 ```
-Rounding_diff = 100 * { ([(loan_total / num_lenders) / num_months] * num_months) – (loan_total / num_lenders) } 
-or in this case
-rounding_diff = 100 * (({($325 / 5 lenders) / 8 months} * 8 months) - ($325 / 5 lenders))
-rounding_diff = 100 * (({$65 / 8 months} * 8 months) - $65)
-rounding_diff = 100 * (($8.13 * 8 months) - $65)
-rounding_diff = 100 * ($0.04)
+General Formula:
+Rounding_diff = 100 * {([(loan_total / num_lenders) / num_months] * num_months) – (loan_total / num_lenders)} 
+
+This Example:
+rounding_diff = 100 * {([($325 / 5 lenders) / 8 months] * 8 months) - ($325 / 5 lenders)}
+rounding_diff = 100 * {([$65 / 8 months] * 8 months) - $65}
+rounding_diff = 100 * {($8.13 * 8 months) - $65}
+rounding_diff = 100 * {$65.04 - $65}
+rounding_diff = 100 * {$0.04}
 rounding_diff = 4
 ```
 The rounding difference is finally used to determine what month to subtract one cent from every lender's bill. In this case, the first 4 months will be at $8.13 and $8.12 for the remaining 4 months.
