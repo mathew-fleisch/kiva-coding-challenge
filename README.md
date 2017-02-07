@@ -49,10 +49,11 @@ However, if that exact amount is paid back to each lender, over 8 months, the to
 ```
 Rounding_diff = 100 * { ([(loan_total / num_lenders) / num_months] * num_months) – (loan_total / num_lenders) } 
 or in this case
-rounding_diff = 100 * (({($325 / 5 lenders) / 8 months} * 8 months) - ($325 / 5 lenders)) = 4
-rounding_diff = 100 * (({$65 / 8 months} * 8 months) - $65) = 4
-rounding_diff = 100 * (($8.13 * 8 months) - $65) = 4
-rounding_diff = 100 * ($0.04) = 4
+rounding_diff = 100 * (({($325 / 5 lenders) / 8 months} * 8 months) - ($325 / 5 lenders))
+rounding_diff = 100 * (({$65 / 8 months} * 8 months) - $65)
+rounding_diff = 100 * (($8.13 * 8 months) - $65)
+rounding_diff = 100 * ($0.04)
+rounding_diff = 4
 ```
 The rounding difference is finally used to determine what month to subtract one cent from every lender's bill. In this case, the first 4 months will be at $8.13 and $8.12 for the remaining 4 months.
 ```
